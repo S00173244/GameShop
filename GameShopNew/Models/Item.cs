@@ -9,18 +9,20 @@ namespace GameShopNew.Models
     public enum ItemCategory { Health, Stamina, Magic }
     public class Item
     {
-        ItemCategory Category;
+        [Key]
+        public int Id { get; set; }
+
+        public ItemCategory Category { get; set; }
 
         [DataType("decimal(18,2)")]
-        double Cost;
-        string IconURL;
+        public double Cost { get; set; }
+        public string IconURL { get; set; }
 
-        [Required]
-        int ID;
+
 
         [MaxLength(50)]
-        string Name;
+        public string Name { get; set; }
 
-        
+
     }
 }
